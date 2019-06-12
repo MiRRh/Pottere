@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class bulletMoving : MonoBehaviour
+{
+    public GameObject bullet;
+    public float delay;
+    public float timer;
+    public float speed;
+    private GameObject Target;
+    private GameObject newbullet;
+    private GameObject Vector3;
+    private bool ready = true;
+    
+        void Start()
+    {
+        Target = GameObject.FindWithTag("Target");
+        Vector3 = Target;
+    }
+
+    void Update()
+    {
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, Target.transform.position, speed);
+    }
+}
